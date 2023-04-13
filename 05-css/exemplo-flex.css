@@ -22,11 +22,15 @@ body {
 .coluna:hover {
     font-weight: bold;
     color: white;
-    background-color: black;
+    background-color: black ;
 }
 
 #col1 {
     background-color: red;
+}
+
+#col1:hover {
+    background-color: rgb(37, 139, 150);
 }
 
 #col2 {
