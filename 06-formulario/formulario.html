@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form action="programa.php" method="GET">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            
+            <label for="idNome">Nome</label>
+            <input type="text" id="idNome" name="nome" placeholder="Digite o nome">
+            <br>
+            <label for="idData">Data Nascimento</label>
+            <input type="date" id="idData" name="dtNasc" >
+            <br>
+            <label for="idEmail">E-mail</label>
+            <input type="email" id="idEmail" name="email" >
+            <br>
+            <label for="idTelefone">Telefone</label>
+            <input type="text" id="idTelefone" name="telefone" >
+            <br>
+
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados Acadêmicos</legend>
+            <label for="idCurso">Curso</label>
+            <select name="curso" id="idCurso">
+                <option>ADS</option>
+                <option>GTI</option>
+                <option>CD</option>
+                <option>SI</option>
+            </select>
+            <br>
+            <p>Semestre:
+                <input type="radio" name="semestre" id="s1" value="1">
+                <label for="s1">1º</label>
+                <input type="radio" name="semestre" id="s2" value="2">
+                <label for="s2">2º</label>
+                <input type="radio" name="semestre" id="s3" value="3">
+                <label for="s3">3º</label>
+                <input type="radio" name="semestre" id="s4" value="4">
+                <label for="s4">4º</label>
+                <input type="radio" name="semestre" id="s5" value="5">
+                <label for="s5">5º</label>
+            </p>
+
+        </fieldset>
+        <fieldset>
+            <label for="idTrab">Trabalha?</label>
+            <input type="checkbox" id="idTrab" name="trabalha">
+            <br>
+            <label for="idLocal">Local de trabalho</label>
+            <input type="text" id="idLocal" name="localTrabalho" >
+            <br>
+            <label for="idExp">Descreva sua experiência</label>
+            <br>
+            <textarea id="idExp" name="experiencia"></textarea>
+
+        </fieldset>
+        <input type="submit" value="Gravar">
+        <input type="reset" value="Limpar">
+
+    </form>
+</body>
+</html>
