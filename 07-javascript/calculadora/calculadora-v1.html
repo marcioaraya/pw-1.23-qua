@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +11,13 @@
     <h1>Calculadora</h1>
     <div class="form-group">
         <div class="form-control">
-            <label for="idn1">Primeiro Número</label>
-            <input type="text" id="idn1"
+            <label for="id_n1">Primeiro Número</label>
+            <input type="text" id="id_n1"
                    placeholder="Digite um número">
         </div>
         <div class="form-control">
-            <label for="idn2">Segundo Número</label>
-            <input type="text" id="idn2"
+            <label for="id_n2">Segundo Número</label>
+            <input type="text" id="id_n2"
                     placeholder="Digite um número">
         </div>
         <h2>Operação</h2>
@@ -38,18 +38,27 @@
             <label for="id_div">Divisão</label>
         </div>
         <div class="form-control">
-            <button onclick="calcula()">Calcular</button>
+            <button onclick="calcula()" class="btn btn-primary">Calcular</button>
         </div>
+        <!-- usamos a tag span para 'marcar' o local onde desejamos exibir o resultado da operação escolhida -->
         <h2>Resultado:<span id="id_res"></span></h2>
     </div>
     <script>
         function calcula()
         {
             // obter valores de n1 e n2
-            let n1 = parseFloat(document.getElementById("idn1").value);
-            let n2 = parseFloat(document.getElementById("idn2").value);
+            // document -  indica o documento HTML definido neste arquivo
+            // getElementById() - procura nesta página o elemento cujo atributo 'id' é o indicado, 
+            // ou seja, 'id_n1' ou 'id_n2'
+            // value é o atributo que contém o valor digitado na caixa de texto
+            let n1 = parseFloat(document.getElementById("id_n1").value);
+            let n2 = parseFloat(document.getElementById("id_n2").value);
 
             // obter a operação selecionada
+            // o método querySelector() vai buscar elementos para os quais a expressão seja verdadeira
+            // a expressao 'input[name="operacao"]:checked' especifica a tag <input> que tenha atributo 'name' igual a 'operacao' 
+            // e que esteja marcado ('checked')
+            // 'value' é o atributo que contém o valor atribuído a esse elemento (botão de rádio) que está marcado
             let operacao = document.querySelector('input[name="operacao"]:checked').value;
 
             // efetuar o cálculo
@@ -71,6 +80,10 @@
             }
 
             // mostrar o resultado
+            // innerHTML é o atributo que representa o conteúdo da tag recuperada com o 
+            // document.getElementById("id_res")
+            // quando atribuímos o conteúdo da variável 'resultado' para o 'innerHTML'
+            // estamos reescrevendo a página e vai aparecer o resultado calculado.
             document.getElementById("id_res").innerHTML = resultado;
 
         }
